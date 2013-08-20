@@ -25,7 +25,7 @@ body {
 /* css กำหนดความกว้าง ความสูงของแผนที่ */  
 #map_canvas {   
     width:250px;  
-    height:300px;  
+    height:280px;  
     margin:auto;  
 /*  margin-top:100px;*/  
 }  
@@ -81,7 +81,7 @@ function initialize(position) { // ฟังก์ชันแสดงแผน
     var my_DivObj=$("#map_canvas")[0];   
     // กำหนด Option ของแผนที่  
     var myOptions = {  
-        zoom: 10, // กำหนดขนาดการ zoom  
+        zoom: 9, // กำหนดขนาดการ zoom  
         center: my_Latlng , // กำหนดจุดกึ่งกลาง  
         mapTypeId:my_mapTypeId // กำหนดรูปแบบแผนที่  
     };  
