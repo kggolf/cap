@@ -6,7 +6,7 @@
 
 <title>Testmid</title>
 
-    <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+    <script type="text/javascript" charset="utf-8" src="cordova-2.5.0.js"></script>
     <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
     
     
@@ -24,8 +24,8 @@ body {
 }  
 /* css กำหนดความกว้าง ความสูงของแผนที่ */  
 #map_canvas {   
-    width:220px;  
-    height:250px;  
+    width:200px;  
+    height:300px;  
     margin:auto;  
 /*  margin-top:100px;*/  
 }  
@@ -37,17 +37,26 @@ body {
 <body> 
 <div class="navbar navbar-inverse navbar-static-top">
 		<div class="navbar-inner">
-			  <a class="brand" href="#" style="float:center"><center><h1>Tell Me</h1></center></a>
+			  <a class="brand" href="#" style="float:center"><center><h2>Tell Me</h2></center></a>
 		</div>
 	</div><br>
 
 <div align="center">
-
+<h5>Latitude : 
+    <input name="lat_value" type="text" id="lat_value" value="0" /><br>
+Longitude :    
+    <input name="lon_value" type="text" id="lon_value" value="0" /></h5>
 </div>
 
   <div id="map_canvas"></div>  
   
- 
+ <div id="showDD" style="margin:auto;padding-top:5px;width:550px;">    
+  <form id="form_get_detailMap" name="form_get_detailMap" method="post" action="" align="center">    
+  ข้อมูลสถานที่<br />  
+  <textarea name="place_value" rows="2" id="place_value" style="width:200px;"></textarea>    
+    <br />  
+  </form>    
+</div>   
     
 <script src="http://code.jquery.com/jquery-latest.js"></script> 
 <script type="text/javascript">  
