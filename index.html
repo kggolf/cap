@@ -174,7 +174,7 @@ function startDrawing(poly,color){
     if(listener!=undefined){  
         GGM.event.removeListener(listener);  
     }         
-    listener=GGM.event.addListener(map, 'click', function(event){  
+    listener=GGM.event.addListener(map, 'touch', function(event){  
         var path = poly.getPath();  
   
         path.push(event.latLng);  
@@ -212,13 +212,6 @@ function initialize(position) { // ฟังก์ชันแสดงแผน
         mapTypeId:my_mapTypeId // กำหนดรูปแบบแผนที่  
     };  
     map = new GGM.Map(my_DivObj,myOptions);// สร้างแผนที่และเก็บตัวแปรไว้ในชื่อ map  
-  
-    var my_Marker = new GGM.Marker({ // สร้างตัว marker  
-        position: my_Latlng,  // กำหนดไว้ที่เดียวกับจุดกึ่งกลาง  
-        map: map, // กำหนดว่า marker นี้ใช้กับแผนที่ชื่อ instance ว่า map  
-        draggable:false, // กำหนดให้สามารถลากตัว marker นี้ได้  
-        title:"คลิกลากเพื่อหาตำแหน่งจุดที่ต้องการ!" // แสดง title เมื่อเอาเมาส์มาอยู่เหนือ  
-    }); 
     
   GGM.LatLng.prototype.kmTo = function(a){   
     var e = Math, ra = e.PI/180;   
