@@ -20,7 +20,7 @@ html { height: 100% }
 body {   
     height:100%;  
     margin:0;padding:0;  
-    font-size:20px;  
+    font-size:18px;  
 }  
 /* css กำหนดความกว้าง ความสูงของแผนที่ */  
 #map_canvas {   
@@ -39,7 +39,7 @@ body {
 		<div class="navbar-inner">
 			  <a class="brand" href="#" style="float:center"><center><h2>Tell Me</h2></center></a>
 		</div>
-	</div><br>
+	</div>
 
 <div align="center">
 <h5>Latitude : 
@@ -50,10 +50,10 @@ Longitude :
 
   <div id="map_canvas"></div>  
   
- <div id="showDD" style="margin:auto;padding-top:5px;width:380px;">    
+ <div id="showDD" style="margin:auto;padding-top:5px;width:300px;">    
   <form id="form_get_detailMap" name="form_get_detailMap" method="post" action="" align="center">    
   ข้อมูลสถานที่<br />  
-  <textarea name="place_value" rows="2" id="place_value" style="width:380px;"></textarea>    
+  <textarea name="place_value" rows="2" id="place_value" style="width:300px;"></textarea>    
     <br />  
   </form>    
 </div>   
@@ -113,7 +113,7 @@ function initialize(position) { // ฟังก์ชันแสดงแผน
         });       
         
         $("#lat_value").val(my_Point.lat());  // เอาค่า latitude ตัว marker แสดงใน textbox id=lat_value  
-        $("#lon_value").val(my_Point.lng()); // เอาค่า longitude ตัว marker แสดงใน textbox id=lon_value   e  
+        $("#lon_value").val(my_Point.lng()); // เอาค่า longitude ตัว marker แสดงใน textbox id=lon_value
     });       
   
     // กำหนด event ให้กับตัวแผนที่ เมื่อมีการเปลี่ยนแปลงการ zoom  
