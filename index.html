@@ -173,11 +173,8 @@ function startDrawing(poly,color){
     var i=0;  
     if(listener!=undefined){  
         GGM.event.removeListener(listener);  
-    } 
-   
-    
-    listener=GGM.event.addListener(map, "click", function(event){ 
-        
+    }         
+    listener=GGM.event.addListener(map, 'click', function(event){  
         var path = poly.getPath();  
   
         path.push(event.latLng);  
@@ -185,9 +182,18 @@ function startDrawing(poly,color){
         var data_path="";  
         $.each(path.b,function(j,k){  
             data_path+=path.b[j].ra+","+path.b[j].sa+"\r\n";  
-        }); 
+        });  
         $("#distance").val(poly.inKm());  
   
+        // Add a new marker at the new plotted point on the polyline.  
+        var image="http://google.com/mapfiles/ms/micons/"+color+".png";  
+        marker[i] = new GGM.Marker({  
+          position: event.latLng,  
+          title: '#' + path.getLength(),  
+          map: map,  
+          icon: image  
+        });    
+        i++;  
     });           
 }  
   
@@ -201,7 +207,7 @@ function initialize(position) { // ฟังก์ชันแสดงแผน
     var my_DivObj=$("#map_canvas")[0];   
     // กำหนด Option ของแผนที่  
     var myOptions = {  
-        zoom: 15, // กำหนดขนาดการ zoom  
+        zoom: 14, // กำหนดขนาดการ zoom  
         center: my_Latlng , // กำหนดจุดกึ่งกลาง  
         mapTypeId:my_mapTypeId // กำหนดรูปแบบแผนที่  
     };  
